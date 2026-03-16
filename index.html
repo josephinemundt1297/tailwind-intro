@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Verweis auf lokales Stylesheet (Tailwind Installation) -->
+    <link rel="stylesheet" href="./src/style.css" />
+    <title>Patisserie - Feinster Genuss</title>
+  </head>
+  <!-- 
+  BODY ERLÄUTERUNG:
+  - min-h-screen: Der Body ist mindestens so hoch wie der Bildschirm.
+  - bg-[url(...)]: Lädt mein das Hintergrundbild.
+  - bg-cover: Das Bild skaliert so, dass der ganze Bereich bedeckt ist (keine Lücken).
+  - bg-center: Das Bild wird in der Mitte ausgerichtet.
+  - bg-fixed: Das Bild bleibt beim Scrollen fixiert.
+  - flex flex-col: Nutzt Flexbox, um Inhalte untereinander (Spalte) anzuordnen.
+  - items-center / justify-center: Zentriert den Inhalt horizontal und vertikal.
+  - p-4: Padding (Abstand nach innen), damit der Inhalt am Handy nicht am Rand klebt.
+-->
+  <body
+    class="min-h-screen bg-[url('https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=1600&auto=format&fit=crop')] bg-cover bg-center bg-fixed flex flex-col items-center justify-center p-4"
+  >
+    <!-- 
+      HAUPT-CONTAINER ERLÄUTERUNG:
+      - max-w-2xl: Maximale Breite des Containers (ca. 672px).
+      - w-full: Nimmt auf kleinen Bildschirmen die volle Breite ein.
+      - bg-orange-50/80: Die Farbe 'orange-50' (Creme) mit nur 60% Deckkraft (macht es transparent).
+      - backdrop-blur-lg: Erzeugt einen starken Weichzeichner-Effekt auf dem Bild dahinter.
+      - p-8 / md:p-12: Innenabstand (Padding). Erhöht sich auf mittleren Bildschirmen (md) Auf dem Handy: Nutze den kleinen Abstand (p-8).
+        Auf dem Laptop/Tablet: Schalte automatisch auf den größeren Abstand um (p-12), weil dort mehr Platz zur Verfügung steht und es edler aussieht, wenn der Inhalt "atmen" kann.
+      - rounded-[2.5rem]: Sehr weiche, extra-runde Ecken.
+      - shadow-xl: Ein großer, weicher Schatten für räumliche Tiefe.
+      - text-center: Zentriert den gesamten Text im Container.
+      - border border-orange-100/90: Ein dünner Rahmen für eine Abgrenzung und mehr tiefe.
+    -->
+    <div
+      class="max-w-2xl w-full bg-orange-50/60 backdrop-blur-lg p-8 md:p-12 rounded-[2.5rem] shadow-xl text-center border border-orange-100/90"
+    >
+      <header class="mb-10">
+        <!-- 
+              HEADER ERLÄUTERUNG:
+              - text-4xl / md:text-6xl: Schriftgröße, die auf dem Desktop wächst.
+              - font-serif: Eine Schrift mit Serifen.
+              - font-bold: Fettgedruckt.
+              - text-stone-800: Ein sehr dunkles Warmgrau (weicher als Schwarz).
+              - tracking-tight: Verringert den Abstand zwischen den Buchstaben.
+            -->
+        <h1
+          class="text-4xl md:text-6xl font-serif font-bold text-stone-800 tracking-tight"
+        >
+          Deine Patisserie
+        </h1>
+        <!--  1. <div>: Das ist unser "Strich". Ohne Inhalt ist er unsichtbar, bis wir ihm Maße geben.
+              2. h-0.5: Die HÖHE (Height). 0.5 ist in Tailwind extrem dünn (nur 2 Pixel).
+              3. w-16: Die BREITE (Width). Das sind etwa 64 Pixel. So wird aus dem Punkt eine Linie.
+              4. bg-rose-300: Die FARBE (Background). Ein zartes Rosa, passend zum Gebäck-Thema.
+              5. mx-auto: Das ZENTRIEREN. 'm' steht für Margin (Abstand), 'x' für die horizontale Achse (links/rechts). 
+                 'auto' sagt: "Verteile den Platz links und rechts gleichmäßig", schiebe die Linie also in die Mitte.
+              6. mt-6: ABSTAND NACH OBEN. 'm' für Margin, 't' für Top. Schafft Platz zwischen Text und Linie.
+              7. rounded-full: Die FORM. Macht die Enden der Linie kreisrund statt eckig und hart. -->
+        <div class="h-0.5 w-16 bg-rose-300 mx-auto mt-6 rounded-full"></div>
+      </header>
+
+      <main>
+        <!-- 
+              TEXT ERLÄUTERUNG:
+              - text-lg / md:text-xl: Etwas größere Schrift für bessere Lesbarkeit.
+              - text-stone-600: Mittleres Grau-Braun, wirkt ruhig und unaufdringlich.
+              - leading-relaxed: Erhöht den Zeilenabstand für ein luftiges Gefühl.
+              - mb-10: Margin-Bottom (Abstand nach unten zum Button).
+              - font-light: Eine dünnere Schriftstärke für einen modernen Look.
+            -->
+        <p
+          class="text-lg md:text-xl text-stone-600 leading-relaxed mb-10 font-light"
+        >
+          Willkommen in unserer Welt der süßen Versuchungen. Hier wird jedes
+          Gebäck mit Liebe und den feinsten Zutaten handgefertigt.
+        </p>
+
+        <!-- 
+              BUTTON ERLÄUTERUNG:
+              - cursor-pointer: Der Zeiger wird zu einer Hand um das Klick-Event zu verdeutlichen.
+              - inline-block: Verhält sich wie Text, erlaubt aber Abstände.
+              - px-10 py-4: Großzügiges Padding links/rechts (px) und oben/unten (py).
+              - bg-stone-800: Dunkles Fundament für den Button.
+              - hover:bg-stone-700: Wird beim Drüberfahren etwas heller.
+              - text-orange-50: Die helle Creme-Farbe als Kontrast für die Schrift.
+              - rounded-full: Komplett abgerundete Seiten (Pillenform).
+              - transition-all / duration-300: Macht Animationen (wie Hover) geschmeidig.
+              - hover:-translate-y-1: Der Button schwebt beim Drüberfahren 4px nach oben.
+              - active:scale-95: Der Button wird beim Anklicken kurz etwas kleiner (Feedback).
+            -->
+        <button
+          class="cursor-pointer inline-block px-10 py-4 bg-stone-800 hover:bg-stone-700 text-orange-50 font-medium rounded-full shadow-md transform transition-all duration-300 hover:-translate-y-1 active:scale-95 focus:outline-none"
+        >
+          Anfrage senden
+        </button>
+      </main>
+
+      <footer class="mt-14 text-stone-500 text-xs tracking-widest uppercase">
+        <!-- tracking-widest: Weit auseinandergezogene Buchstaben -->
+        &copy; 2026 Patisserie d'Elégance - erstellt von Josephine Mundt mit
+        Hilfe von Gemini
+      </footer>
+    </div>
+  </body>
+</html>
